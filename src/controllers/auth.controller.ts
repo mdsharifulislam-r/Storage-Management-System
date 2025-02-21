@@ -48,10 +48,13 @@ export const registerUser = async (
 export const login = async (req: Request, res: Response): Promise<any> => {
   try {
     const user = req.body;
+    
+    
     const emailExist = await userModel.findOne({ email: user.email });
     if (!emailExist) {
       return res.status(400).json({ message: "Email does not exist" });
     }
+   
     const match = await compare(user.password, emailExist.password);
     if (!match) {
       return res.status(400).json({ message: "Invalid password" });
@@ -70,6 +73,8 @@ export const login = async (req: Request, res: Response): Promise<any> => {
       },
     });
   } catch (error) {
+    console.log(error);
+    
     res.status(500).json({ message: "Something went wrong" });
   }
 };

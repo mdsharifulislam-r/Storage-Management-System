@@ -1,0 +1,518 @@
+{
+	"info": {
+		"_postman_id": "99b7d641-e069-40e4-b1a2-09ca75adbbf1",
+		"name": "Storage Mangement System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42416431"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"runa\",\n    \"email\":\"runa@gmail.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sharif@gmail.com\",\n    \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "googleLogin",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjZjYWQ4ZmQ4NzY3ZWQyZmI5OWIxNiIsImlhdCI6MTc0MDAzODkyOSwiZXhwIjoxNzQwMDQyNTI5fQ.IZpH5PuLbistjWNH-C9bL3toWM4Ra9F7zUT8fOieA5E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPass\":\"12345678\",\n    \"newPass\":\"MasomRana456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set Secuity Key",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDA2ODQwMCwiZXhwIjoxNzQwMDcyMDAwfQ.f9GZdTeXm4YEoYfXa_Pb_7MXY0utVWJCYknC7i8t4Zg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\":5462\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/set-key",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"set-key"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Folders",
+			"item": [
+				{
+					"name": "create Folder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjZmY2ZhNmIxZDA2YTkzYmYzN2VkOCIsImlhdCI6MTc0MDA0NjM5NiwiZXhwIjoxNzQwMDQ5OTk2fQ.YX3l1ouyumtvmW3rzadyOTbhvVFcL09KzgqTCl7X4rY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"songs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/folder/create",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"folder",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Folders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"songs\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/folder",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Folder",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get Files by Folder Name",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/folder/images",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"folder",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Secure Files",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"key\":5462\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/file/secure",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"secure"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favaroute Files",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/file/favorite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Date Wise Files",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/file/favorite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Upload Filess",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get Single FIle",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Make Secure File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/file/make-secure/67b75a42ce400e4a5f4b6be9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"make-secure",
+								"67b75a42ce400e4a5f4b6be9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Make Favarite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/file/make-favorite/67b75a42ce400e4a5f4b6be9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"make-favorite",
+								"67b75a42ce400e4a5f4b6be9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Duplicate File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3YjcxZjE3NDY2N2VjYjliMTU2M2E4NCIsImlhdCI6MTc0MDEwNTYwNCwiZXhwIjoxNzQwMTA5MjA0fQ.AtR8qbycPVUG2EZjOXh_nLzYuVv0LSRBtn7bPhIy1C8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/file/make-favorite/67b75a42ce400e4a5f4b6be9",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"file",
+								"make-favorite",
+								"67b75a42ce400e4a5f4b6be9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete File",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Rename File",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Root",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		}
+	]
+}
