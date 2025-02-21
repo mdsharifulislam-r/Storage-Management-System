@@ -11,3 +11,11 @@
 - Rename Files
 - Delete Files
 ---
+## For Locally Install 
+```bash
+
+npm run Build
+# And
+npm run start
+
+```
